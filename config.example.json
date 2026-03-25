@@ -1,0 +1,54 @@
+{
+  "_readme": "Copy this file to config.json and fill in your values. These match the Valves in the Open WebUI function. Never commit config.json to git — it contains secrets.",
+
+  "gateway_url": "ws://your-openclaw-container-name:48146",
+  "_gateway_url_notes": [
+    "Use ws:// (WebSocket), not http://",
+    "Hostinger image default port: 48146",
+    "Official OpenClaw install default port: 18789",
+    "If Open WebUI and OpenClaw are in the same Docker network, use the container name as the hostname",
+    "Example (Hostinger): ws://openclaw-myproject-openclaw-1:48146",
+    "Example (official):   ws://openclaw-openclaw-1:18789"
+  ],
+
+  "gateway_token": "find-in-.openclaw/openclaw.json",
+  "_gateway_token_notes": [
+    "Keep it blank if not needed",
+    "Open your OpenClaw data folder",
+    "Open the file: .openclaw/openclaw.json",
+    "Navigate to: gateway → auth → token",
+    "It looks like a random 32-character string"
+  ],
+
+  "device_id": "find-in-.openclaw/identity/device.json",
+  "_device_id_notes": [
+    "Open your OpenClaw data folder",
+    "Open the file: .openclaw/identity/device.json",
+    "Look for the 'deviceId' field",
+    "It is a long hex string (64 characters)"
+  ],
+
+  "private_key_b64": "find-in-.openclaw/identity/device.json",
+  "_private_key_b64_notes": [
+    "Same file: .openclaw/identity/device.json",
+    "Look for the 'privateKeyPem' field",
+    "Paste ONLY the base64 content — not the BEGIN/END header lines",
+    "Example: MC4CAQAwBQYDK2VwBCIEI...",
+    "The Function already adds the ---Begin---End--- part",
+    "The pipe accepts bare base64 or a full PEM block — either works"
+  ],
+
+  "public_key_b64": "find-in-.openclaw/identity/device.json",
+  "_public_key_b64_notes": [
+    "Same file as above",
+    "Look for the 'publicKeyPem' field",
+    "Paste ONLY the base64 content — not the BEGIN/END header lines",
+    "Example: MCowBQYDK2VwAyEA..."
+  ],
+
+  "timeout_connect": 15,
+  "_timeout_connect_notes": "Seconds to wait for the auth handshake. Default 15 is fine for local Docker.",
+
+  "timeout_response": 180,
+  "_timeout_response_notes": "Seconds to wait for the agent to reply. Increase if your model is slow."
+}
