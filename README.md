@@ -135,6 +135,13 @@ docker ps | grep openclaw
 
 ---
 
+## Related projects
+
+- [BORG_ROUTE](https://github.com/D-jai/Borg_Routing): breaks a job into steps and sends each step to the cheapest model that can do it, local or cloud.
+- [The_Borg_DB](https://github.com/D-jai/The_Borg_DB-public): a local-first knowledge base that turns your meetings, emails and documents into searchable facts and mines them for patterns.
+
+---
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
